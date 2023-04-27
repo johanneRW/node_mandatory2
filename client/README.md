@@ -2,21 +2,30 @@
 
 ## Server
 
-Go to directory
-    cd server
+Go to directory:
+```
+cd server
+```
 
 Create an initial database: 
-    npm run create-database
-    npm run reset-database
+```
+npm run create-database
+npm run reset-database
+```
 
 Run the server:
-    node app.js
+```
+node app.js
+```
 
 ## Client
 
-Go to directory
-    cd client
+Go to directory:
+```
+cd client
+```
 
 Start client:
-    npm run dev
-    
+```
+npm run dev
+```
