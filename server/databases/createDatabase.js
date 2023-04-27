@@ -4,7 +4,7 @@ const isDeleteMode = process.argv.findIndex((argument) => argument === "delete_m
 
 if (isDeleteMode) {
     db.exec(`DROP TABLE users;`);
-    db.exec(`DROP TABLE dinosaur;`);
+    db.exec(`DROP TABLE dinosaurs;`);
 }
 
 db.exec(`
