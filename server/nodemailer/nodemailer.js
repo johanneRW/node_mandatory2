@@ -2,7 +2,7 @@ import nodemailer from "nodemailer"
 
 // Generate test SMTP service account from ethereal.email
 // Only needed if you don't have a real mail account for testing
-let testAccount = await nodemailer.createTestAccount();
+let testAccount = await nodemailer.createTestAccount()
 
 // create reusable transporter object using the default SMTP transport
 let transporter = nodemailer.createTransport({
@@ -13,6 +13,6 @@ let transporter = nodemailer.createTransport({
         user: testAccount.user, // generated ethereal user
         pass: testAccount.pass, // generated ethereal password
     },
-});
+})
 
 export default transporter

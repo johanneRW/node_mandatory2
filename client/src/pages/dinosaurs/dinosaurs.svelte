@@ -1,12 +1,12 @@
 <script>
-    import AuthGuard from "../../guards/AuthGuard.svelte";
+    import AuthGuard from "../../guards/AuthGuard.svelte"
     import { loadDinos, updateVote } from "../../store/store.js"
 
     let dinoPromise = loadDinos()
 
     function voteForDino(id) {
         const promise = updateVote(id)
-        promise.then(response => {
+        promise.then((response) => {
             if (response.ok) {
                 dinoPromise = loadDinos()
             }
@@ -24,7 +24,7 @@
                 <p>Votes: {dinosaur.votes}</p>
                 <AuthGuard>
                     <div slot="authed">
-                        <button on:click|preventDefault={voteForDino}>Vote</button>
+                        <button on:click|preventDefault={() => voteForDino(dinosaur.id)}>Vote</button>
                     </div>
                 </AuthGuard>
             </div>
@@ -38,6 +38,20 @@
 </AuthGuard>
 
 <style>
+    h1 {
+        font-style: italic;
+    }
+
+    #loggedOut {
+        color: #820404;
+        font-weight: bold;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        width: 95vw;
+    }
+
     .dino img {
         width: 150px;
     }
@@ -51,20 +65,7 @@
         width: 20vw;
     }
 
-    .grid-container {
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-        width: 95vw;
-    }
-    #loggedOut {
-        color: #820404;
-        font-weight: bold;
-    }
-
     button {
         background-color: #ebca38;
-    }
-    h1 {
-        font-style: italic;
     }
 </style>

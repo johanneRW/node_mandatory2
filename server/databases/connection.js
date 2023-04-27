@@ -4,6 +4,6 @@ import { open } from 'sqlite'
 const connection = await open({
     filename: './mandatory2.db',
     driver: sqlite3.Database
-});
+})
 
-export default connection;
+export default connection 
